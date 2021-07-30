@@ -1,0 +1,1 @@
+function binarize()  gradiente();  img = imread ('gradiente.png');   [lin, col] = size(img);    parte1 = img(:, 1:uint8(col/2));  parte2 = img(:, uint8(col/2)+1:col);    t1 = thresholdGlobal(parte1);  t2 = thresholdGlobal(parte2);    t3 = zeros(lin, col);  t3(:, 1:uint8(col/2)) = parte1 > t1;    t3(:, uint8(col/2)+1:col) = parte2 > t2;  imshow(t3);endfunction
